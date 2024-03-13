@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -158,7 +159,7 @@ public class KMeans{
         FileWriter writer = new FileWriter(file);
 
         for (int i = 0; i < k; i++) {
-            writer.write(bufferreader.readLine());
+            writer.write(BoundedLineReader.readLine(bufferreader, 5_000_000));
             writer.write("\n");
         }
 
